@@ -42,36 +42,39 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
     let error: Observable<ActionError>
     
     // 内部変数
-    private let action: Action<(), APIResponse>
+    private let action: Action<(), [Article]>
     private let disposeBag = DisposeBag()
     
-    init() {
+    init(repository: ArticleRepositoryType,
+         scheduler: SchedulerType = MainScheduler.instance) {
         
         // ニュース記事一覧
         self.articles = BehaviorRelay<[Article]>(value: [])
         
         // アクション定義
         self.action = Action { _ in
-            let urlStr = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=\(Constants.api_key)"
-            let url = URL(string:urlStr)!
-            return URLRequest.load(resource: Resource<APIResponse>(url: url))
+            return repository.fetchArticles().observe(on: scheduler)
         }
         
         // 記事
         self.action.elements
-            .map { $0.articles }
+            .observe(on: scheduler)
             .bind(to:self.articles)
             .disposed(by: disposeBag)
         
         // 起動
         self.trigger.asObservable()
+            .observe(on: scheduler)
             .bind(to:self.action.inputs)
             .disposed(by: disposeBag)
         
         // 検索中
-        self.isLoading = action.executing.startWith(false)
+        self.isLoading = action.executing
+            .observe(on: scheduler)
+            .startWith(false)
+            .distinctUntilChanged()
 
         // エラー
-        self.error = action.errors
+        self.error = action.errors.observe(on: scheduler)
     }
 }

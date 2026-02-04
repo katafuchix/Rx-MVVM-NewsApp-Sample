@@ -14,7 +14,7 @@ import MBProgressHUD
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = ViewModel()
+    let viewModel  = ViewModel(repository: ArticleRepository())
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -28,6 +28,8 @@
 		3195D0122F32C15D00648FDD /* NSObject-Rx in Frameworks */ = {isa = PBXBuildFile; productRef = 3195D0112F32C15D00648FDD /* NSObject-Rx */; };
 		3195D0152F32C16A00648FDD /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = 3195D0142F32C16A00648FDD /* Action */; };
 		3195D01C2F32C1B100648FDD /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 3195D01B2F32C1B100648FDD /* MBProgressHUD */; };
+		31A7A0272F32D89500F9931C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A7A0262F32D89400F9931C /* Repository.swift */; };
+		31A7A0362F32DC2400F9931C /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 31A7A0352F32DC2400F9931C /* RxTest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		31484B9F285DD78900675A69 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		31484BA3285DDBDA00675A69 /* MBProgressHUD+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+Rx.swift"; sourceTree = "<group>"; };
 		3195D02B2F32C32900648FDD /* Rx-MVVM-NewsApp-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rx-MVVM-NewsApp-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A7A0262F32D89400F9931C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A7A0362F32DC2400F9931C /* RxTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 			children = (
 				31484B7B285DCF6300675A69 /* Rx-MVVM-NewsApp-Sample */,
 				3195D02C2F32C32900648FDD /* Rx-MVVM-NewsApp-SampleTests */,
+				31A7A0342F32DC2400F9931C /* Frameworks */,
 				31484B7A285DCF6300675A69 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 		31484B7B285DCF6300675A69 /* Rx-MVVM-NewsApp-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				31A7A0252F32D88100F9931C /* Repository */,
 				31484B93285DD0D600675A69 /* View */,
 				31484B92285DD0C400675A69 /* ViewModel */,
 				31484B91285DD08500675A69 /* Model */,
@@ -160,6 +166,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		31A7A0252F32D88100F9931C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				31A7A0262F32D89400F9931C /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		31A7A0342F32DC2400F9931C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +220,7 @@
 			);
 			name = "Rx-MVVM-NewsApp-SampleTests";
 			packageProductDependencies = (
+				31A7A0352F32DC2400F9931C /* RxTest */,
 			);
 			productName = "Rx-MVVM-NewsApp-SampleTests";
 			productReference = 3195D02B2F32C32900648FDD /* Rx-MVVM-NewsApp-SampleTests.xctest */;
@@ -212,7 +234,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					31484B78285DCF6300675A69 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -282,6 +304,7 @@
 				31484B99285DD21400675A69 /* Article.swift in Sources */,
 				31484B7D285DCF6300675A69 /* AppDelegate.swift in Sources */,
 				31484B7F285DCF6300675A69 /* SceneDelegate.swift in Sources */,
+				31A7A0272F32D89500F9931C /* Repository.swift in Sources */,
 				31484B9B285DD26900675A69 /* RLRequest+Extended.swift in Sources */,
 				31484B95285DD13D00675A69 /* Constants.swift in Sources */,
 			);
@@ -362,6 +385,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = U5LW6HVD99;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -383,6 +407,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -422,6 +447,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = U5LW6HVD99;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -436,6 +462,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -449,7 +476,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5LW6HVD99;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rx-MVVM-NewsApp-Sample/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,7 +503,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5LW6HVD99;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Rx-MVVM-NewsApp-Sample/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -506,7 +531,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5LW6HVD99;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -534,7 +558,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U5LW6HVD99;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -673,6 +696,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3195D0002F32C11B00648FDD /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = "plugin:RswiftGenerateInternalResources";
+		};
+		31A7A0352F32DC2400F9931C /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3195D0052F32C14200648FDD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
